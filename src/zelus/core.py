@@ -632,7 +632,7 @@ class Zelus():
                 )
             )
 
-            environment = Environment(loader=template_loader)
+            environment = Environment(loader=template_loader, autoescape=True)
             template = environment.get_template(
                 os.path.basename(
                     os.path.expanduser(self._configuration_path)
