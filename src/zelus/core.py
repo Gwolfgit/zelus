@@ -543,8 +543,9 @@ class ConfigurationHandler(FileSystemEventHandler):
 class Zelus():
     def __init__(
             self, mode,
-            monitored_interfaces, monitored_tables=['main'],
+            monitored_interfaces, monitored_tables=None,
             configuration_path="zelus.yml"):
+        monitored_tables = ['main'] if monitored_tables is None else monitored_tables
 
         self.mode = mode
         logger.info(f"Zelus in {mode} mode!")
