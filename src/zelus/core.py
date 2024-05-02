@@ -204,7 +204,7 @@ class RouteBuilder():
             scope = RouteScope.universe
 
         logger.debug(
-            f'Building route: '
+            'Building route: '
             f'dst_len={dst_len} '
             f'src_len={src_len} '
             f'tos={tos} '
@@ -340,7 +340,7 @@ class RouteBuilder():
             oif = None
 
         logger.debug(
-            f'Building route: '
+            'Building route: '
             f'dst_len={dst_len} '
             f'src_len={src_len} '
             f'tos={tos} '
@@ -579,7 +579,7 @@ class Zelus():
                 except ValueError:
                     logger.error(
                         f'Could not find table id for {t}. '
-                        f'Not monitoring this table')
+                        'Not monitoring this table')
 
         # This is a list of interface ids to monitor
         self._monitored_interfaces = []
@@ -680,7 +680,7 @@ class Zelus():
             if oif not in self._monitored_interfaces:
                 logger.critical(
                     f'Protected route ointerface {ointerface} '
-                    f'must be in the monitored interface list '
+                    'must be in the monitored interface list '
                     f'{[ self._route_builder.interface_map.getInterfaceName(i) for i in self._monitored_interfaces]}. '
                     f'Not protecting. route: {route}'
                 )
@@ -695,7 +695,7 @@ class Zelus():
             if table_id not in self._monitored_tables:
                 logger.critical(
                     f'Protected route table {self.table_map.getTableName(table_id)} '
-                    f'must be in the monitored table list '
+                    'must be in the monitored table list '
                     f'{[ self._route_builder.table_map.getTableName(t) for t in self._monitored_tables]}. '
                     f'Not protecting. route: {route}'
                 )
